@@ -12,15 +12,18 @@ function wish(n) {
     if (n == 10) {
         traumaCoins = traumaCoins - 150*9
         document.getElementById("traumacoins").textContent = traumaCoins
+        traumaUpdate()
     }
     else {
         traumaCoins = traumaCoins - 150*n
         document.getElementById("traumacoins").textContent = traumaCoins
+        traumaUpdate()
     }
     for (let i = 1; i <= n; i++) {
         console.log("Hola", i)
         ocChosen = Math.floor(Math.random() * personajes.length);
         return ocChosen.showOCinGacha();
+        invUpdate()
     }
 }
 
