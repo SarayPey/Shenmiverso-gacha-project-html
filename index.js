@@ -1,5 +1,5 @@
-import { akiko, sara, darya, willow } from "./data/dataP.js"
-import { personajes } from "./ocs.js"
+import { akiko, sara, darya, willow } from "./js/data/dataP.js"
+import { personajes } from "./js/ocs.js"
 
 let traumaCoins = 0
 function traumaUpdate () {
