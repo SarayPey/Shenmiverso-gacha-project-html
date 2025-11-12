@@ -1,0 +1,218 @@
+:root {
+	--mythictext: #fffcd7;
+	--mythicneon: #ffee00;
+	--legendarytext: #fae2ff;
+	--legendaryneon: #ff51ff;
+	--epictext: #e5fffb;
+	--epicneon: #00e1ff;
+	--raretext: #ceffec;
+	--rareneon: #00ffbf;
+	--uncommontext: #dbffd0;
+	--uncommonneon: #88ff00;
+	--commontext: #ffe3e3;
+	--commonneon: #ff4646;
+}
+
+* {
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	transition: all .5s;
+}
+.mythic {
+	color: var(--mythictext);
+	text-shadow: 0 0 5px var(--mythicneon);
+}
+.legendary {
+	color: var(--legendarytext);
+	text-shadow: 0 0 5px var(--legendaryneon);
+}
+.epic {
+	color: var(--epictext);
+	text-shadow: 0 0 5px var(--epicneon);
+}
+.rare {
+	color: var(--raretext);
+	text-shadow: 0 0 5px var(--rareneon);
+}
+.uncommon {
+	color: var(--uncommontext);
+	text-shadow: 0 0 5px var(--uncommonneon);
+}
+.common {
+	color: var(--commontext);
+	text-shadow: 0 0 5px var(--commonneon);
+}
+
+body {
+	background-color: #000000;
+}
+
+#modal {
+	z-index: 100;
+	margin: auto;
+	align-content: center;
+	justify-content: center;
+	background-color: #495069;
+	width: 500px;
+	padding: 1.75%;
+	border-radius: 25px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+
+#black {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #000000c0;
+}
+
+@keyframes ocIdle {
+	from {transform: translate(0px, 120px);}
+	to {transform: translate(0px, -25px);}
+}
+@keyframes starCut {
+	0% 	 {transform: translate(0px, 0px);}
+	25%  {transform: translate(0px, 20px);}
+	50%  {transform: translate(20px, 0px);}
+	75%  {transform: translate(0px, -20px);}
+	100% {transform: translate(-20px, 0px);}
+}
+@keyframes obtenido {
+	from {transform: translate(250px, 0px); opacity: 0;}
+	to {transform: translate(0px, 0px); opacity: 100%;}
+}
+
+@keyframes on {
+	from {opacity: 0%;}
+	to {opacity: 100%;}
+}
+@keyframes off {
+	from {opacity: 100%;}
+	to {opacity: 0%;}
+}
+
+#buyTC {
+	box-sizing: border-box;
+	width: max-content;
+	padding: 5px;
+	border: 1px solid #ffe600;
+	border-radius: 25px;
+	font-size: 20px;
+}
+#buyTC div, a {
+	display: inline-block;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 5px;
+}
+#buyTC a {
+	text-decoration: none;
+	border-radius: 25px;
+	border: 1px solid #000000;
+}
+#buyTC a:hover {
+	background-color: #ffe60050;
+	border-color: #ffe600;
+}
+
+#options {
+	display: flex;
+	gap: 10px;
+}
+#options div {
+	background-image: linear-gradient(#9f9fb4, #495069);
+	padding: 10px;
+	width: 140px;
+	height: 20px;
+	border-radius: 25px;
+	position: static;
+	text-align: center;
+	font-size: 20px;
+	align-content: center;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+#options div:hover {
+	background-image: linear-gradient(#d3a200, #ffdd6f);
+		width: 10%;
+		height: 30px;
+}
+
+
+#personaje1 {
+	width: 500px;
+	position: relative;
+	animation-name: ocIdle;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	z-index: -20;
+}
+
+#tag {
+	width: max-content;
+	background-image: linear-gradient(45deg, #2e2d2c, #c9c09c);
+	padding: 10px;
+	margin: 0 25px;
+	border-radius: 25px;
+}
+#tag h1, h2, h3 {
+	margin: 5px 10px;
+}
+#tag h1, h2 {
+	font-style: italic;
+}
+#tag h3 span{
+	color: var(--mythictext);
+	text-shadow: 0 0 5px var(--mythicneon);
+}
+
+
+#StarAnim {
+	display: none;
+	font-size: 100px;
+	position: relative;
+	text-align: center;
+	animation-name: starCut;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	text-shadow: 0 0 15px;
+}
+#wishes {
+	display: flex;
+	justify-content: space-evenly;
+}
+#wishOn, #wishFi, #wishTe {
+	background-image: linear-gradient(#0000ff, #1f53ff);
+	margin-top: 25px;
+	padding: 10px;
+	width: 200px;
+	height: 70px;
+	border-radius: 25px;
+	position: static;
+	text-align: center;
+	font-size: 20px;
+	align-content: center;
+	font-style: italic;
+	font-weight: bolder;
+}
+
+#wishOn:hover, #wishFi:hover, #wishTe:hover {
+	background-image: linear-gradient(#d3a200, #ffdd6f);
+	transform: scale(1.2);
+}
+
+#obteOC {
+	width: 500px;
+	position: relative;
+	display: none;
+	opacity: 0%;
+	/* animation-name: obtenido;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.62, 0.7, 0.36); */
+}
